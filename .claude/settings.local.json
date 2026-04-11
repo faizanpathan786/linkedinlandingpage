@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npx tsc:*)",
       "mcp__ide__getDiagnostics",
-      "Bash(pnpm run:*)"
+      "Bash(pnpm run:*)",
+      "Bash(node artifacts/api-server/build-vercel.mjs)",
+      "Bash(pnpm --filter @workspace/linkedinflow run build)"
     ]
   }
 }
