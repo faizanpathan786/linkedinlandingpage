@@ -5,7 +5,8 @@
       "mcp__ide__getDiagnostics",
       "Bash(pnpm run:*)",
       "Bash(node artifacts/api-server/build-vercel.mjs)",
-      "Bash(pnpm --filter @workspace/linkedinflow run build)"
+      "Bash(pnpm --filter @workspace/linkedinflow run build)",
+      "Bash(pnpm -w run build:vercel)"
     ]
   }
 }
