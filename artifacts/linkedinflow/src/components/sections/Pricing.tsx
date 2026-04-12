@@ -94,12 +94,14 @@ export function Pricing() {
                 {isYearly && <div className="text-xs text-muted-foreground mt-1">Billed annually</div>}
               </div>
               
-              <Button 
-                variant={plan.popular ? "default" : "outline"} 
-                className="w-full mb-8"
-              >
-                {plan.popular ? "Start Free Trial" : "Choose Plan"}
-              </Button>
+              <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button
+                  variant={plan.popular ? "default" : "outline"}
+                  className="w-full mb-8"
+                >
+                  {plan.popular ? "Start Free Trial" : "Choose Plan"}
+                </Button>
+              </a>
               
               <div className="space-y-4 mt-auto">
                 {plan.features.map((f, j) => (

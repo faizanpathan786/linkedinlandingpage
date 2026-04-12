@@ -45,12 +45,16 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base">
-              Start Free Trial <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base">
-              <Play className="mr-2 w-4 h-4" /> See Demo
-            </Button>
+            <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base">
+                Start Free Trial <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+            <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base">
+                <Play className="mr-2 w-4 h-4" /> See Demo
+              </Button>
+            </a>
           </motion.div>
         </div>
 

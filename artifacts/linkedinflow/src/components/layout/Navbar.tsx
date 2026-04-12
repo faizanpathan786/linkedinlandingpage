@@ -20,8 +20,12 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden sm:inline-flex">Sign In</Button>
-          <Button>Start Free Trial</Button>
+          <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" className="hidden sm:inline-flex">Sign In</Button>
+          </a>
+          <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Button>Start Free Trial</Button>
+          </a>
         </div>
       </div>
     </nav>

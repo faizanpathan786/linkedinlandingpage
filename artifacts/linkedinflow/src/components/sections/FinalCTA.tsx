@@ -36,12 +36,16 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <Button size="lg" variant="secondary" className="w-full sm:w-auto h-14 px-8 text-base text-primary">
-            Start Free Trial
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
-            Book a Demo
-          </Button>
+          <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="secondary" className="w-full sm:w-auto h-14 px-8 text-base text-primary">
+              Start Free Trial
+            </Button>
+          </a>
+          <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+              Book a Demo
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
