@@ -2,7 +2,7 @@
   "version": 2,
   "framework": null,
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "node artifacts/api-server/build-vercel.mjs && pnpm --filter @workspace/linkedinflow run build",
+  "buildCommand": "pnpm -w run build:vercel",
   "outputDirectory": "artifacts/linkedinflow/dist/public",
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/index" },
