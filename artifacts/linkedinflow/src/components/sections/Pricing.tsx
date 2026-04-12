@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 
 export function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
@@ -55,15 +54,15 @@ export function Pricing() {
           <p className="text-lg text-muted-foreground mb-8">Start for free, upgrade when you need to.</p>
           
           <div className="flex items-center justify-center gap-3">
-            <Label htmlFor="billing-toggle" className={`text-sm ${!isYearly ? 'font-bold' : 'text-muted-foreground'}`}>Monthly</Label>
+            <label htmlFor="billing-toggle" className={`text-sm ${!isYearly ? 'font-bold' : 'text-muted-foreground'}`}>Monthly</label>
             <Switch 
               id="billing-toggle" 
               checked={isYearly} 
               onCheckedChange={setIsYearly} 
             />
-            <Label htmlFor="billing-toggle" className={`text-sm flex items-center gap-2 ${isYearly ? 'font-bold' : 'text-muted-foreground'}`}>
+            <label htmlFor="billing-toggle" className={`text-sm flex items-center gap-2 ${isYearly ? 'font-bold' : 'text-muted-foreground'}`}>
               Yearly <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-medium">Save 20%</span>
-            </Label>
+            </label>
           </div>
         </div>
 
