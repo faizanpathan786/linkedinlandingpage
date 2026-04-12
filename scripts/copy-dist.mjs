@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const src = resolve(root, "artifacts/linkedinflow/dist/public");
-const dest = resolve(root, "dist");
+const dest = resolve(root, "_site");
 
 rmSync(dest, { recursive: true, force: true });
 mkdirSync(dest, { recursive: true });
