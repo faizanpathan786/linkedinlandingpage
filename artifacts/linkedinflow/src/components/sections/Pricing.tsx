@@ -20,9 +20,9 @@ const plans = [
   },
   {
     name: "Agency", monthly: 99, yearly: 79,
-    description: "For teams and social media managers.",
+    description: "For power users who want the full suite.",
     entryX: 80,
-    features: ["20 LinkedIn accounts","Team collaboration","Bulk upload & batch scheduling","White-label reports","Dedicated onboarding"],
+    features: ["1 LinkedIn account","Unlimited scheduled posts","Advanced analytics","AI content suggestions","White-label reports","Dedicated onboarding"],
   },
 ];
 

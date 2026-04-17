@@ -1,3 +1,14 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neon green rounded square -->
+  <rect width="32" height="32" rx="6" fill="#8acb4f"/>
+
+  <!-- "in" lettermark — dark charcoal for contrast on neon green -->
+  <!-- i dot -->
+  <rect x="6" y="6" width="4" height="4" rx="1" fill="#111415"/>
+  <!-- i stem -->
+  <rect x="6" y="12" width="4" height="14" rx="1" fill="#111415"/>
+  <!-- n left stem -->
+  <rect x="13" y="12" width="4" height="14" rx="1" fill="#111415"/>
+  <!-- n arch + right stem -->
+  <path d="M17 16.5C17 14.015 18.79 12 21.5 12C24.21 12 26 14.015 26 16.5V26H22V17.5C22 16.672 21.328 16 20.5 16C19.672 16 19 16.672 19 17.5V26H17V16.5Z" fill="#111415"/>
 </svg>
