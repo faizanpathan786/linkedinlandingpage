@@ -1,58 +1,92 @@
 import { Link } from "wouter";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Twitter, Github } from "lucide-react";
+
+const LINKS = {
+  Product: [
+    { label: "Features",     href: "#features"  },
+    { label: "Pricing",      href: "#pricing"   },
+    { label: "Integrations", href: "#"           },
+    { label: "Changelog",    href: "#"           },
+  ],
+  Docs: [
+    { label: "Getting Started", href: "#" },
+    { label: "API Reference",   href: "#" },
+    { label: "Guides",          href: "#" },
+  ],
+  Company: [
+    { label: "About",            href: "#"       },
+    { label: "Contact",          href: "#contact" },
+    { label: "Privacy Policy",   href: "#"       },
+    { label: "Terms of Service", href: "#"       },
+  ],
+};
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="relative bg-[#040608] text-white overflow-hidden">
+      {/* Gradient top accent */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#8acb4f]/40 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2 font-semibold text-lg mb-4">
-              <div className="bg-primary text-primary-foreground p-1.5 rounded-md">
+            <Link href="/" className="inline-flex items-center gap-2.5 font-bold text-lg mb-5 group">
+              <div className="bg-[#8acb4f] text-[#111415] p-1.5 rounded-lg group-hover:shadow-[0_0_18px_rgba(138,203,79,0.45)] transition-shadow duration-200">
                 <Linkedin className="w-5 h-5" />
               </div>
-              LinkedInFlow
+              <span className="group-hover:text-[#c8f08a] transition-colors duration-200">LinkedInFlow</span>
             </Link>
-            <p className="text-muted-foreground text-sm max-w-sm">
-              The command center for serious LinkedIn operators. Create, schedule, and publish content without the busywork.
+            <p className="text-[#555d64] text-sm max-w-xs leading-relaxed">
+              The command center for serious LinkedIn operators. Create, schedule,
+              and publish content without the busywork.
             </p>
+
+            {/* Social icons */}
+            <div className="flex gap-3 mt-6">
+              {[
+                { Icon: Linkedin, href: "#" },
+                { Icon: Twitter,  href: "#" },
+                { Icon: Github,   href: "#" },
+              ].map(({ Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  className="w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.04]
+                             flex items-center justify-center text-[#555d64]
+                             hover:text-[#8acb4f] hover:border-[#8acb4f]/30 hover:bg-[#8acb4f]/8
+                             transition-all duration-200"
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-foreground">Features</a></li>
-              <li><a href="#pricing" className="hover:text-foreground">Pricing</a></li>
-              <li><a href="#" className="hover:text-foreground">Integrations</a></li>
-              <li><a href="#" className="hover:text-foreground">Changelog</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Docs</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground">Getting Started</a></li>
-              <li><a href="#" className="hover:text-foreground">API Reference</a></li>
-              <li><a href="#" className="hover:text-foreground">Guides</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground">About</a></li>
-              <li><a href="#contact" className="hover:text-foreground">Contact</a></li>
-              <li><a href="#" className="hover:text-foreground">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground">Terms of Service</a></li>
-            </ul>
-          </div>
+          {/* Link columns */}
+          {Object.entries(LINKS).map(([heading, items]) => (
+            <div key={heading}>
+              <h4 className="text-sm font-semibold text-white mb-4">{heading}</h4>
+              <ul className="space-y-3">
+                {items.map(({ label, href }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      className="text-sm text-[#555d64] hover:text-[#8acb4f] transition-colors duration-200"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border text-center sm:text-left text-sm text-muted-foreground flex flex-col sm:flex-row justify-between items-center gap-4">
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#3d4449]">
           <p>© {new Date().getFullYear()} LinkedInFlow. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-foreground"><Linkedin className="w-5 h-5" /></a>
-          </div>
+          <p className="text-[#2a2e32]">Built for LinkedIn operators, by LinkedIn operators.</p>
         </div>
       </div>
     </footer>
