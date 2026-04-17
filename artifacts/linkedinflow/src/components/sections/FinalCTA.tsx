@@ -44,7 +44,7 @@ function SplitHeading() {
         {line2.map((word, i) => (
           <span key={i} className="overflow-hidden inline-block leading-tight">
             <motion.span
-              className="inline-block animate-shimmer bg-gradient-to-r from-[#8acb4f] via-[#c8f570] to-[#8acb4f] bg-clip-text text-transparent"
+              className="inline-block animate-shimmer bg-gradient-to-r from-[#a3e635] via-[#c8f570] to-[#a3e635] bg-clip-text text-transparent"
               initial={{ y: "115%", opacity: 0 }}
               whileInView={{ y: "0%", opacity: 1 }}
               viewport={VP}
@@ -69,7 +69,7 @@ export function FinalCTA() {
       {/* Floating particles — scale in from zero then float */}
       {PARTICLES.map((p, i) => (
         <motion.div key={i}
-          className="absolute rounded-full bg-[#8acb4f]/40 pointer-events-none"
+          className="absolute rounded-full bg-[#a3e635]/40 pointer-events-none"
           style={{ left: p.x, top: p.y, width: p.size, height: p.size }}
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -81,7 +81,7 @@ export function FinalCTA() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Label */}
-        <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8acb4f] mb-5"
+        <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-5"
           initial={{ opacity: 0, y: -24, scale: 0.85 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={VP}
@@ -113,7 +113,7 @@ export function FinalCTA() {
         >
           <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
             <Button size="lg"
-              className="w-full sm:w-auto h-14 px-10 text-base bg-[#8acb4f] text-[#111415] hover:bg-[#a0d95e] border-0
+              className="w-full sm:w-auto h-14 px-10 text-base bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0
                          font-bold shadow-[0_0_40px_rgba(138,203,79,0.38)] hover:shadow-[0_0_56px_rgba(138,203,79,0.55)]
                          transition-all duration-200"
             >

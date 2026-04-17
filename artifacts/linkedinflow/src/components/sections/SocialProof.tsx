@@ -58,7 +58,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Elena Rodriguez", role: "B2B Sales Leader", initials: "ER",
-    color: "from-[#8acb4f]/30 to-emerald-500/20",
+    color: "from-[#a3e635]/30 to-emerald-500/20",
     flipDir: 1,
     quote: "Scheduling posts for my entire team from one dashboard is a superpower. We look like a coordinated media machine.",
   },
@@ -96,7 +96,7 @@ export function SocialProof() {
             {doubled.map(({ name, Icon }, i) => (
               <div key={i}
                 className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.03]
-                           text-[#555d64] hover:text-[#8acb4f] hover:border-[#8acb4f]/20 transition-colors duration-200 select-none shrink-0"
+                           text-[#555d64] hover:text-[#a3e635] hover:border-[#a3e635]/20 transition-colors duration-200 select-none shrink-0"
               >
                 <Icon className="w-4 h-4" />
                 <span className="text-sm font-medium whitespace-nowrap">{name}</span>
@@ -108,7 +108,7 @@ export function SocialProof() {
         {/* Section heading — word-by-word reveal */}
         <div className="text-center mb-14">
           <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8acb4f] mb-3"
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-3"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={VP} transition={{ duration: 0.5 }}
           >
@@ -146,10 +146,10 @@ export function SocialProof() {
                          p-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] group"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#8acb4f]/8 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#a3e635]/8 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
 
               <div className="flex gap-1 mb-5">
-                {[0,1,2,3,4].map(s => <Star key={s} className="w-3.5 h-3.5 fill-[#8acb4f] text-[#8acb4f]" />)}
+                {[0,1,2,3,4].map(s => <Star key={s} className="w-3.5 h-3.5 fill-[#a3e635] text-[#a3e635]" />)}
               </div>
               <div className="absolute top-5 right-5 text-5xl font-serif leading-none text-white/[0.04] select-none pointer-events-none">"</div>
               <p className="text-[#8a929a] leading-relaxed mb-6 text-[0.93rem]">"{t.quote}"</p>

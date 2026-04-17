@@ -7,7 +7,8 @@
       "Bash(node artifacts/api-server/build-vercel.mjs)",
       "Bash(pnpm --filter @workspace/linkedinflow run build)",
       "Bash(pnpm -w run build:vercel)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(xargs sed *)"
     ]
   }
 }

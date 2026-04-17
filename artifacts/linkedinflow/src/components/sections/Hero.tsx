@@ -11,7 +11,7 @@ export function Hero() {
       {/* Gradient orbs */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary/10 blur-[130px] rounded-full pointer-events-none" />
       <motion.div
-        className="absolute top-24 left-[8%] w-80 h-80 bg-[#8acb4f]/7 blur-[90px] rounded-full pointer-events-none"
+        className="absolute top-24 left-[8%] w-80 h-80 bg-[#a3e635]/7 blur-[90px] rounded-full pointer-events-none"
         animate={{ x: [0, 28, 0], y: [0, -18, 0] }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -29,9 +29,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#8acb4f]/30 bg-[#8acb4f]/8 px-4 py-1.5 text-sm font-medium text-[#8acb4f] mb-7">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/30 bg-[#a3e635]/8 px-4 py-1.5 text-sm font-medium text-[#a3e635] mb-7">
               <motion.span
-                className="w-2 h-2 rounded-full bg-[#8acb4f] shrink-0"
+                className="w-2 h-2 rounded-full bg-[#a3e635] shrink-0"
                 animate={{ opacity: [1, 0.25, 1] }}
                 transition={{ duration: 1.6, repeat: Infinity }}
               />
@@ -47,7 +47,7 @@ export function Hero() {
           >
             Automate Your{" "}
             <span
-              className="animate-shimmer bg-gradient-to-r from-[#8acb4f] via-[#c8f570] to-[#8acb4f] bg-clip-text text-transparent"
+              className="animate-shimmer bg-gradient-to-r from-[#a3e635] via-[#c8f570] to-[#a3e635] bg-clip-text text-transparent"
             >
               LinkedIn Growth
             </span>{" "}
@@ -73,7 +73,7 @@ export function Hero() {
             <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="w-full sm:w-auto h-12 px-8 text-base bg-[#8acb4f] text-[#111415] hover:bg-[#a0d95e] border-0
+                className="w-full sm:w-auto h-12 px-8 text-base bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0
                            font-semibold shadow-[0_0_32px_rgba(138,203,79,0.38)] hover:shadow-[0_0_44px_rgba(138,203,79,0.55)]
                            transition-all duration-200"
               >
@@ -98,18 +98,18 @@ export function Hero() {
           {/* Left badge */}
           <motion.div
             className="hidden lg:flex absolute -left-2 top-10 z-20 items-center gap-3
-                        rounded-2xl border border-[#8acb4f]/20 bg-[#0d1117]/80 backdrop-blur-md
+                        rounded-2xl border border-[#a3e635]/20 bg-[#0d1117]/80 backdrop-blur-md
                         px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             initial={{ opacity: 0, x: -32, y: 10 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="w-9 h-9 rounded-xl bg-[#8acb4f]/15 flex items-center justify-center shrink-0">
-              <TrendingUp className="w-4 h-4 text-[#8acb4f]" />
+            <div className="w-9 h-9 rounded-xl bg-[#a3e635]/15 flex items-center justify-center shrink-0">
+              <TrendingUp className="w-4 h-4 text-[#a3e635]" />
             </div>
             <div>
               <div className="text-xs text-[#626a72]">Avg. reach increase</div>
-              <div className="text-lg font-bold text-[#8acb4f] leading-tight">+400%</div>
+              <div className="text-lg font-bold text-[#a3e635] leading-tight">+400%</div>
             </div>
           </motion.div>
 
@@ -139,7 +139,7 @@ export function Hero() {
             transition={{ duration: 0.75, delay: 0.45 }}
           >
             {/* Glow under mockup */}
-            <div className="absolute -inset-x-8 -bottom-6 h-44 bg-[#8acb4f]/10 blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute -inset-x-8 -bottom-6 h-44 bg-[#a3e635]/10 blur-3xl rounded-full pointer-events-none" />
             <div className="absolute -inset-x-4 bottom-0 h-20 bg-primary/8 blur-2xl rounded-full pointer-events-none" />
 
             {/* Browser chrome */}
@@ -196,7 +196,7 @@ export function Hero() {
                             <div className="text-sm font-medium text-white">John Doe</div>
                             <div className="text-xs text-[#6a7177]">Posting to LinkedIn</div>
                           </div>
-                          <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-[#8acb4f]/15 text-[#8acb4f] font-medium border border-[#8acb4f]/20">
+                          <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-[#a3e635]/15 text-[#a3e635] font-medium border border-[#a3e635]/20">
                             Scheduled
                           </span>
                         </div>
@@ -214,7 +214,7 @@ export function Hero() {
                           <div className="text-xs text-[#6a7177] flex items-center gap-1.5">
                             <Calendar className="w-3 h-3" /> Tomorrow, 9:00 AM
                           </div>
-                          <Button size="sm" className="h-8 bg-[#8acb4f] text-[#111415] hover:bg-[#9fd95e] border-0 font-medium">
+                          <Button size="sm" className="h-8 bg-[#a3e635] text-[#111415] hover:bg-[#9fd95e] border-0 font-medium">
                             <Send className="w-3 h-3 mr-1.5" /> Schedule
                           </Button>
                         </div>
@@ -225,7 +225,7 @@ export function Hero() {
                       <div className="rounded-xl border border-white/[0.06] bg-[#0d1117] p-4 shadow-sm">
                         <div className="text-sm font-medium text-[#6a7177] mb-1">Weekly Reach</div>
                         <div className="text-2xl font-bold text-white">
-                          24.5k <span className="text-xs text-[#8acb4f] font-normal ml-1">+12%</span>
+                          24.5k <span className="text-xs text-[#a3e635] font-normal ml-1">+12%</span>
                         </div>
                         <div className="h-10 mt-4 flex items-end gap-1">
                           {[40, 70, 45, 90, 65, 30, 80].map((h, i) => (
@@ -241,7 +241,7 @@ export function Hero() {
                         <div className="space-y-3">
                           {[1, 2, 3].map((i) => (
                             <div key={i} className="flex items-start gap-3 p-2 rounded-md hover:bg-white/[0.03] transition-colors">
-                              <div className="w-2 h-2 rounded-full bg-[#8acb4f] mt-1.5 shrink-0" />
+                              <div className="w-2 h-2 rounded-full bg-[#a3e635] mt-1.5 shrink-0" />
                               <div>
                                 <div className="text-sm font-medium text-white line-clamp-1">How to build a SaaS...</div>
                                 <div className="text-xs text-[#6a7177]">Wed, 10:00 AM</div>

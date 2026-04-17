@@ -34,7 +34,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg select-none group">
           <motion.div
-            className="animate-pulse-ring bg-[#8acb4f] text-[#111415] p-1.5 rounded-lg"
+            className="animate-pulse-ring bg-[#a3e635] text-[#111415] p-1.5 rounded-lg"
             whileHover={{ scale: 1.12, rotate: -6 }}
             transition={{ type: "spring", stiffness: 380, damping: 14 }}
           >
@@ -54,7 +54,7 @@ export function Navbar() {
               className="relative text-[#98a1a8] hover:text-white transition-colors duration-200 py-1 group"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 h-px w-0 bg-[#8acb4f] group-hover:w-full transition-all duration-300 ease-out rounded-full" />
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-[#a3e635] group-hover:w-full transition-all duration-300 ease-out rounded-full" />
             </a>
           ))}
         </div>
@@ -71,7 +71,7 @@ export function Navbar() {
           </a>
           <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
             <Button
-              className="h-9 px-5 text-sm bg-[#8acb4f] text-[#111415] hover:bg-[#a0d95e] border-0
+              className="h-9 px-5 text-sm bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0
                          shadow-[0_0_18px_rgba(138,203,79,0.30)] hover:shadow-[0_0_28px_rgba(138,203,79,0.5)]
                          transition-all duration-200 font-semibold"
             >

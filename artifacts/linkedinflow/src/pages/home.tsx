@@ -51,7 +51,7 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#8acb4f] origin-left z-[200] shadow-[0_0_12px_rgba(138,203,79,0.8)]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[#a3e635] origin-left z-[200] shadow-[0_0_12px_rgba(138,203,79,0.8)]"
         style={{ scaleX }}
       />
 
@@ -69,7 +69,7 @@ export default function Home() {
           />
           <motion.div
             aria-hidden="true"
-            className="absolute h-5 w-5 rounded-full border border-[#8acb4f]/60 bg-[#8acb4f]/20 shadow-[0_0_30px_rgba(138,203,79,0.65)]"
+            className="absolute h-5 w-5 rounded-full border border-[#a3e635]/60 bg-[#a3e635]/20 shadow-[0_0_30px_rgba(138,203,79,0.65)]"
             animate={{
               x: cursor.x - 10,
               y: cursor.y - 10,
