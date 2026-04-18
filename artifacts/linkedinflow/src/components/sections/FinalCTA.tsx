@@ -44,7 +44,7 @@ function SplitHeading() {
         {line2.map((word, i) => (
           <span key={i} className="overflow-hidden inline-block leading-tight">
             <motion.span
-              className="inline-block animate-shimmer bg-gradient-to-r from-[#a3e635] via-[#c8f570] to-[#a3e635] bg-clip-text text-transparent"
+              className="inline-block animate-shimmer bg-gradient-to-r from-[#0a66c2] via-[#5aa6f6] to-[#0a66c2] bg-clip-text text-transparent"
               initial={{ y: "115%", opacity: 0 }}
               whileInView={{ y: "0%", opacity: 1 }}
               viewport={VP}
@@ -62,14 +62,14 @@ function SplitHeading() {
 export function FinalCTA() {
   return (
     <section className="py-32 px-4 bg-[#060810] text-white relative overflow-hidden border-y border-white/[0.06]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_600px_350px_at_50%_50%,rgba(138,203,79,0.10),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_600px_350px_at_50%_50%,rgba(10,102,194,0.10),transparent)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_400px_250px_at_30%_70%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-transparent to-[#060810] pointer-events-none" />
 
       {/* Floating particles — scale in from zero then float */}
       {PARTICLES.map((p, i) => (
         <motion.div key={i}
-          className="absolute rounded-full bg-[#a3e635]/40 pointer-events-none"
+          className="absolute rounded-full bg-[#0a66c2]/40 pointer-events-none"
           style={{ left: p.x, top: p.y, width: p.size, height: p.size }}
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -81,7 +81,7 @@ export function FinalCTA() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Label */}
-        <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-5"
+        <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0a66c2] mb-5"
           initial={{ opacity: 0, y: -24, scale: 0.85 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={VP}
@@ -113,8 +113,8 @@ export function FinalCTA() {
         >
           <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
             <Button size="lg"
-              className="w-full sm:w-auto h-14 px-10 text-base bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0
-                         font-bold shadow-[0_0_40px_rgba(138,203,79,0.38)] hover:shadow-[0_0_56px_rgba(138,203,79,0.55)]
+              className="w-full sm:w-auto h-14 px-10 text-base bg-[#0a66c2] text-[#ffffff] hover:bg-[#1477d4] border-0
+                         font-bold shadow-[0_0_40px_rgba(10,102,194,0.38)] hover:shadow-[0_0_56px_rgba(10,102,194,0.55)]
                          transition-all duration-200"
             >
               Start Free Trial <ArrowRight className="ml-2 w-4 h-4" />

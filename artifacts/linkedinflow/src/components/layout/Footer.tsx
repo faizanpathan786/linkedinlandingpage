@@ -25,14 +25,14 @@ export function Footer() {
   return (
     <footer className="relative bg-[#040608] text-white overflow-hidden">
       {/* Gradient top accent */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#a3e635]/40 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0a66c2]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5 font-bold text-lg mb-5 group">
-              <div className="bg-[#a3e635] text-[#111415] p-1.5 rounded-lg group-hover:shadow-[0_0_18px_rgba(138,203,79,0.45)] transition-shadow duration-200">
+              <div className="bg-[#0a66c2] text-[#ffffff] p-1.5 rounded-lg group-hover:shadow-[0_0_18px_rgba(10,102,194,0.45)] transition-shadow duration-200">
                 <Linkedin className="w-5 h-5" />
               </div>
               <span className="group-hover:text-[#c8f08a] transition-colors duration-200">LinkedInFlow</span>
@@ -54,7 +54,7 @@ export function Footer() {
                   href={href}
                   className="w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.04]
                              flex items-center justify-center text-[#555d64]
-                             hover:text-[#a3e635] hover:border-[#a3e635]/30 hover:bg-[#a3e635]/8
+                             hover:text-[#0a66c2] hover:border-[#0a66c2]/30 hover:bg-[#0a66c2]/8
                              transition-all duration-200"
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -72,7 +72,7 @@ export function Footer() {
                   <li key={label}>
                     <a
                       href={href}
-                      className="text-sm text-[#555d64] hover:text-[#a3e635] transition-colors duration-200"
+                      className="text-sm text-[#555d64] hover:text-[#0a66c2] transition-colors duration-200"
                     >
                       {label}
                     </a>

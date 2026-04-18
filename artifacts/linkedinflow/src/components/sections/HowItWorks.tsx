@@ -53,7 +53,7 @@ export function HowItWorks() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-3"
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0a66c2] mb-3"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={VP} transition={{ duration: 0.5, delay: 0.1 }}
           >

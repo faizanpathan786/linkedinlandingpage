@@ -13,32 +13,32 @@ import { Sparkles, Layers, Lock, LineChart, Archive, Users } from "lucide-react"
 /* ── data ── */
 const FEATURES = [
   {
-    icon: <Sparkles className="w-5 h-5 text-[#a3e635]" />,
+    icon: <Sparkles className="w-5 h-5 text-[#0a66c2]" />,
     title: "AI-assisted post creation",
     description: "Draft engaging posts in seconds with smart suggestions tailored to your voice and audience.",
   },
   {
-    icon: <Layers className="w-5 h-5 text-[#a3e635]" />,
+    icon: <Layers className="w-5 h-5 text-[#0a66c2]" />,
     title: "Drafts & publishing workflow",
     description: "Manage your content pipeline from idea to published with a visual kanban board.",
   },
   {
-    icon: <Lock className="w-5 h-5 text-[#a3e635]" />,
+    icon: <Lock className="w-5 h-5 text-[#0a66c2]" />,
     title: "LinkedIn OAuth connection",
     description: "Connect your LinkedIn account safely with one click. We never ask for passwords.",
   },
   {
-    icon: <LineChart className="w-5 h-5 text-[#a3e635]" />,
+    icon: <LineChart className="w-5 h-5 text-[#0a66c2]" />,
     title: "Post analytics",
     description: "Track reach, impressions, and engagement on every post to see what resonates.",
   },
   {
-    icon: <Archive className="w-5 h-5 text-[#a3e635]" />,
+    icon: <Archive className="w-5 h-5 text-[#0a66c2]" />,
     title: "Content vault",
     description: "Never lose a post — browse, reuse, and remix past high-performing content.",
   },
   {
-    icon: <Users className="w-5 h-5 text-[#a3e635]" />,
+    icon: <Users className="w-5 h-5 text-[#0a66c2]" />,
     title: "Team batch processing",
     description: "Schedule and publish in bulk for your entire team's accounts from one view.",
   },
@@ -129,7 +129,7 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
           className="absolute inset-x-0 top-0 h-px pointer-events-none"
           animate={{
             background: isActive
-              ? "linear-gradient(90deg,transparent,rgba(138,203,79,0.9),transparent)"
+              ? "linear-gradient(90deg,transparent,rgba(10,102,194,0.9),transparent)"
               : "linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent)",
             opacity: isActive ? 1 : 0.6,
           }}
@@ -138,7 +138,7 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
 
         {/* ── corner orb that grows when active ── */}
         <motion.div
-          className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#a3e635]/12 blur-3xl pointer-events-none"
+          className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#0a66c2]/12 blur-3xl pointer-events-none"
           animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1.3 : 0.7 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         />
@@ -149,7 +149,7 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
                      transition-opacity duration-300"
           style={{
             background: `radial-gradient(380px circle at ${glow.x}% ${glow.y}%,
-              rgba(138,203,79,0.11), transparent 65%)`,
+              rgba(10,102,194,0.11), transparent 65%)`,
           }}
         />
 
@@ -173,7 +173,7 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
         {/* ── icon box ── */}
         <motion.div
           className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl
-                     border border-[#a3e635]/25 bg-[#a3e635]/10 shrink-0"
+                     border border-[#0a66c2]/25 bg-[#0a66c2]/10 shrink-0"
           animate={
             isActive && !reduceMotion
               ? { scale: [1, 1.18, 0.95, 1.05, 1], rotate: [0, -10, 8, -4, 0] }
@@ -195,7 +195,7 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
 
         {/* ── bottom accent bar (expands when active) ── */}
         <motion.div
-          className="mt-5 h-px rounded-full bg-gradient-to-r from-[#a3e635] to-[#c8f570]"
+          className="mt-5 h-px rounded-full bg-gradient-to-r from-[#0a66c2] to-[#5aa6f6]"
           animate={{
             scaleX: isActive ? 1 : 0.25,
             opacity: isActive ? 1 : 0.2,
@@ -224,12 +224,12 @@ export function Features() {
   return (
     <section id="features" className="relative overflow-hidden py-24 px-4 bg-background">
       {/* Ambient radial backdrop */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(138,203,79,0.08)_0%,transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(10,102,194,0.08)_0%,transparent_50%)]" />
 
       {/* Floating orbs */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#a3e635]/8 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#0a66c2]/8 blur-3xl"
         animate={{ y: [0, -16, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -250,11 +250,11 @@ export function Features() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-[#a3e635] to-transparent"
+            className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-[#0a66c2] to-transparent"
             animate={{ opacity: [0.4, 1, 0.4], scaleX: [0.85, 1.1, 0.85] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#a3e635] mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0a66c2] mb-4">
             Features
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">

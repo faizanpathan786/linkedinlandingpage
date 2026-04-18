@@ -51,7 +51,7 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#a3e635] origin-left z-[200] shadow-[0_0_12px_rgba(138,203,79,0.8)]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[#0a66c2] origin-left z-[200] shadow-[0_0_12px_rgba(10,102,194,0.8)]"
         style={{ scaleX }}
       />
 
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
           <motion.div
             aria-hidden="true"
-            className="absolute h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(138,203,79,0.24)_0%,rgba(138,203,79,0.10)_32%,rgba(138,203,79,0)_70%)] blur-2xl"
+            className="absolute h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(10,102,194,0.24)_0%,rgba(10,102,194,0.10)_32%,rgba(10,102,194,0)_70%)] blur-2xl"
             animate={{
               x: cursor.x - 160,
               y: cursor.y - 160,
@@ -69,7 +69,7 @@ export default function Home() {
           />
           <motion.div
             aria-hidden="true"
-            className="absolute h-5 w-5 rounded-full border border-[#a3e635]/60 bg-[#a3e635]/20 shadow-[0_0_30px_rgba(138,203,79,0.65)]"
+            className="absolute h-5 w-5 rounded-full border border-[#0a66c2]/60 bg-[#0a66c2]/20 shadow-[0_0_30px_rgba(10,102,194,0.65)]"
             animate={{
               x: cursor.x - 10,
               y: cursor.y - 10,

@@ -56,7 +56,7 @@ export function Pricing() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Heading */}
         <div className="text-center mb-14">
-          <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-3"
+          <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0a66c2] mb-3"
             initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={VP} transition={{ duration: 0.5 }}
           >
@@ -81,7 +81,7 @@ export function Pricing() {
             <span className={`text-sm font-medium transition-colors duration-200 ${!isYearly ? "text-white" : "text-[#555d64]"}`}>Monthly</span>
             <button
               onClick={() => setIsYearly(v => !v)}
-              className={`relative w-11 h-6 rounded-full transition-colors duration-250 focus:outline-none ${isYearly ? "bg-[#a3e635]" : "bg-white/10"}`}
+              className={`relative w-11 h-6 rounded-full transition-colors duration-250 focus:outline-none ${isYearly ? "bg-[#0a66c2]" : "bg-white/10"}`}
               aria-label="Toggle billing"
             >
               <motion.span layout transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -91,7 +91,7 @@ export function Pricing() {
             </button>
             <span className={`text-sm font-medium flex items-center gap-2 transition-colors duration-200 ${isYearly ? "text-white" : "text-[#555d64]"}`}>
               Yearly
-              <span className="bg-[#a3e635]/15 text-[#a3e635] text-xs px-2 py-0.5 rounded-full font-semibold border border-[#a3e635]/20">Save 20%</span>
+              <span className="bg-[#0a66c2]/15 text-[#0a66c2] text-xs px-2 py-0.5 rounded-full font-semibold border border-[#0a66c2]/20">Save 20%</span>
             </span>
           </motion.div>
         </div>
@@ -108,13 +108,13 @@ export function Pricing() {
               whileHover={{ y: plan.popular ? -4 : -8, scale: plan.popular ? 1.01 : 1.02, transition: { duration: 0.25 } }}
               className={`relative flex flex-col rounded-2xl overflow-hidden
                 ${plan.popular
-                  ? "border-2 border-[#a3e635]/50 bg-[linear-gradient(160deg,rgba(138,203,79,0.08)_0%,rgba(255,255,255,0.03)_100%)] shadow-[0_0_50px_rgba(138,203,79,0.18)] scale-[1.03]"
+                  ? "border-2 border-[#0a66c2]/50 bg-[linear-gradient(160deg,rgba(10,102,194,0.08)_0%,rgba(255,255,255,0.03)_100%)] shadow-[0_0_50px_rgba(10,102,194,0.18)] scale-[1.03]"
                   : "border border-white/[0.07] bg-[linear-gradient(160deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)]"}`}
             >
-              <div className={`absolute inset-x-0 top-0 h-px ${plan.popular ? "bg-gradient-to-r from-transparent via-[#a3e635]/60 to-transparent" : "bg-gradient-to-r from-transparent via-white/10 to-transparent"}`} />
+              <div className={`absolute inset-x-0 top-0 h-px ${plan.popular ? "bg-gradient-to-r from-transparent via-[#0a66c2]/60 to-transparent" : "bg-gradient-to-r from-transparent via-white/10 to-transparent"}`} />
 
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-[#a3e635] text-[#111415] text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_20px_rgba(138,203,79,0.5)]">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-[#0a66c2] text-[#ffffff] text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_20px_rgba(10,102,194,0.5)]">
                   <Zap className="w-3 h-3" /> Most Popular
                 </div>
               )}
@@ -147,7 +147,7 @@ export function Pricing() {
                 <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer" className="mb-7">
                   <Button className={`w-full font-semibold transition-all duration-200
                     ${plan.popular
-                      ? "bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0 shadow-[0_0_22px_rgba(138,203,79,0.3)] hover:shadow-[0_0_32px_rgba(138,203,79,0.5)]"
+                      ? "bg-[#0a66c2] text-[#ffffff] hover:bg-[#1477d4] border-0 shadow-[0_0_22px_rgba(10,102,194,0.3)] hover:shadow-[0_0_32px_rgba(10,102,194,0.5)]"
                       : "bg-white/[0.06] text-white border border-white/[0.1] hover:bg-white/[0.1]"}`}
                   >
                     {plan.popular ? "Start Free Trial" : "Choose Plan"}
@@ -164,8 +164,8 @@ export function Pricing() {
                       viewport={VP}
                       transition={{ duration: 0.4, delay: i * 0.13 + j * 0.07 + 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${plan.popular ? "bg-[#a3e635]/20" : "bg-white/[0.06]"}`}>
-                        <Check className={`w-2.5 h-2.5 ${plan.popular ? "text-[#a3e635]" : "text-[#6a7177]"}`} />
+                      <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${plan.popular ? "bg-[#0a66c2]/20" : "bg-white/[0.06]"}`}>
+                        <Check className={`w-2.5 h-2.5 ${plan.popular ? "text-[#0a66c2]" : "text-[#6a7177]"}`} />
                       </span>
                       <span className="text-sm text-[#8a929a]">{f}</span>
                     </motion.li>

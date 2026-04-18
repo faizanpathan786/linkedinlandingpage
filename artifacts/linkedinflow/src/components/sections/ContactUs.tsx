@@ -107,7 +107,7 @@ export function ContactUs() {
     >
       {/* Ambient orbs */}
       <motion.div
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#a3e635]/6 blur-[130px] rounded-full pointer-events-none"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0a66c2]/6 blur-[130px] rounded-full pointer-events-none"
         animate={{ scale: [1, 1.12, 1], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -130,11 +130,11 @@ export function ContactUs() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.span
-              className="w-2 h-2 rounded-full bg-[#a3e635]"
+              className="w-2 h-2 rounded-full bg-[#0a66c2]"
               animate={{ opacity: [1, 0.2, 1], scale: [1, 1.4, 1] }}
               transition={{ duration: 1.8, repeat: Infinity }}
             />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635]">
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0a66c2]">
               Contact us
             </span>
           </motion.div>
@@ -193,12 +193,12 @@ export function ContactUs() {
                 transition={{ duration: 0.5, delay: 0.55 + j * 0.12, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.span
-                  className="w-9 h-9 rounded-xl bg-[#a3e635]/10 border border-[#a3e635]/20 flex items-center justify-center shrink-0"
+                  className="w-9 h-9 rounded-xl bg-[#0a66c2]/10 border border-[#0a66c2]/20 flex items-center justify-center shrink-0"
                   whileInView={{ scale: [0.5, 1.15, 1] }}
                   viewport={VP}
                   transition={{ duration: 0.45, delay: 0.6 + j * 0.12, ease: "backOut" }}
                 >
-                  <Icon className="w-4 h-4 text-[#a3e635]" />
+                  <Icon className="w-4 h-4 text-[#0a66c2]" />
                 </motion.span>
                 <span className="text-sm text-[#8a929a]">{label}</span>
               </motion.li>
@@ -268,7 +268,7 @@ export function ContactUs() {
                         placeholder={f.placeholder}
                         autoComplete={f.autoComplete}
                         className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-[#3d4449]
-                                   focus:border-[#a3e635]/50 focus:ring-[#a3e635]/20 transition-all duration-200"
+                                   focus:border-[#0a66c2]/50 focus:ring-[#0a66c2]/20 transition-all duration-200"
                       />
                     </motion.div>
                   ))}
@@ -288,7 +288,7 @@ export function ContactUs() {
                     name="message"
                     placeholder="Tell us what you need help with"
                     className="min-h-36 bg-white/[0.04] border-white/[0.08] text-white placeholder:text-[#3d4449]
-                               focus:border-[#a3e635]/50 focus:ring-[#a3e635]/20 transition-all duration-200 resize-none"
+                               focus:border-[#0a66c2]/50 focus:ring-[#0a66c2]/20 transition-all duration-200 resize-none"
                   />
                 </motion.div>
 
@@ -303,9 +303,9 @@ export function ContactUs() {
                   <p className="text-sm text-[#555d64]">We usually respond within one business day.</p>
                   <Button
                     type="submit"
-                    className="w-full sm:w-auto bg-[#a3e635] text-[#111415] hover:bg-[#a0d95e] border-0
-                               font-semibold shadow-[0_0_20px_rgba(138,203,79,0.25)]
-                               hover:shadow-[0_0_32px_rgba(138,203,79,0.5)] transition-all duration-200"
+                    className="w-full sm:w-auto bg-[#0a66c2] text-[#ffffff] hover:bg-[#1477d4] border-0
+                               font-semibold shadow-[0_0_20px_rgba(10,102,194,0.25)]
+                               hover:shadow-[0_0_32px_rgba(10,102,194,0.5)] transition-all duration-200"
                   >
                     <Send className="w-4 h-4 mr-2" /> Send message
                   </Button>
@@ -321,12 +321,12 @@ export function ContactUs() {
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.div
-                  className="w-16 h-16 rounded-full bg-[#a3e635]/15 border border-[#a3e635]/30 flex items-center justify-center mb-5"
+                  className="w-16 h-16 rounded-full bg-[#0a66c2]/15 border border-[#0a66c2]/30 flex items-center justify-center mb-5"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.15, duration: 0.5, ease: "backOut" }}
                 >
-                  <CheckCircle2 className="w-8 h-8 text-[#a3e635]" />
+                  <CheckCircle2 className="w-8 h-8 text-[#0a66c2]" />
                 </motion.div>
                 <motion.h3
                   className="text-xl font-bold text-white mb-2"

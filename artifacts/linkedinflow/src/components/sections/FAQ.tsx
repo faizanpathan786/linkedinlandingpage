@@ -49,7 +49,7 @@ export function FAQ() {
       <div className="max-w-2xl mx-auto relative z-10">
         {/* Heading */}
         <div className="text-center mb-14">
-          <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a3e635] mb-3"
+          <motion.p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0a66c2] mb-3"
             initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
             viewport={VP} transition={{ duration: 0.5 }}
           >
@@ -82,20 +82,20 @@ export function FAQ() {
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`rounded-xl border transition-colors duration-200
                   ${isOpen
-                    ? "border-[#a3e635]/25 bg-[linear-gradient(160deg,rgba(138,203,79,0.06)_0%,rgba(255,255,255,0.02)_100%)]"
+                    ? "border-[#0a66c2]/25 bg-[linear-gradient(160deg,rgba(10,102,194,0.06)_0%,rgba(255,255,255,0.02)_100%)]"
                     : "border-white/[0.06] bg-white/[0.02] hover:border-white/[0.1]"}`}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center gap-4 px-5 py-4 text-left focus:outline-none group"
                 >
-                  <span className={`shrink-0 text-xs font-mono font-bold tabular-nums transition-colors duration-200 ${isOpen ? "text-[#a3e635]" : "text-[#3d4449]"}`}>
+                  <span className={`shrink-0 text-xs font-mono font-bold tabular-nums transition-colors duration-200 ${isOpen ? "text-[#0a66c2]" : "text-[#3d4449]"}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className={`flex-1 text-sm font-semibold transition-colors duration-200 ${isOpen ? "text-white" : "text-[#c8d0d8] group-hover:text-white"}`}>
                     {faq.q}
                   </span>
-                  <span className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-200 ${isOpen ? "bg-[#a3e635]/20 text-[#a3e635]" : "bg-white/[0.06] text-[#555d64]"}`}>
+                  <span className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-200 ${isOpen ? "bg-[#0a66c2]/20 text-[#0a66c2]" : "bg-white/[0.06] text-[#555d64]"}`}>
                     {isOpen ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
                   </span>
                 </button>
