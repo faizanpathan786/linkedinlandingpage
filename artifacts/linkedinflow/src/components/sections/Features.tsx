@@ -10,7 +10,6 @@ import {
 } from "framer-motion";
 import { Sparkles, Layers, Lock, LineChart, Archive, Users } from "lucide-react";
 
-/* ── data ── */
 const FEATURES = [
   {
     icon: <Sparkles className="w-5 h-5 text-[#0a66c2]" />,
@@ -44,11 +43,9 @@ const FEATURES = [
   },
 ];
 
-/* ── per-column entry direction ── */
-const ENTRY_X = [-90, 0, 90]; // left, centre, right
+const ENTRY_X = [-90, 0, 90];
 const ENTRY_Y = [-20, -70, -20];
 
-/* ── individual card ── */
 interface CardProps {
   feature: (typeof FEATURES)[number];
   index: number;
@@ -61,20 +58,12 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false, amount: 0.25 });
 
-  /* ── mouse-tracking tilt (motion values → springs) ── */
-  const rawX = useMotionValue(0); // -0.5 … 0.5
+  const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
-  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-14, 14]), {
-    stiffness: 350, damping: 28,
-  });
-  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [12, -12]), {
-    stiffness: 350, damping: 28,
-  });
+  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-14, 14]), { stiffness: 350, damping: 28 });
+  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [12, -12]), { stiffness: 350, damping: 28 });
 
-  /* ── specular highlight position ── */
   const [glow, setGlow] = useState({ x: 50, y: 50 });
-
-  /* ── one-shot shimmer sweep ── */
   const [swept, setSwept] = useState(false);
 
   const col = index % 3;
@@ -99,68 +88,53 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
   }
 
   return (
-    /* perspective wrapper — must NOT be a motion element to avoid conflict */
     <div style={{ perspective: "900px" }} onMouseEnter={onActivate}>
       <motion.div
         ref={ref}
-        /* 3D tilt via motion values */
         style={reduceMotion ? {} : { rotateX, rotateY }}
-        /* scroll-in entry */
-        initial={reduceMotion ? false : {
-          opacity: 0,
-          x: entryX,
-          y: entryY,
-          scale: 0.84,
-          filter: "blur(12px)",
-        }}
-        animate={isInView
-          ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }
-          : {}
-        }
+        initial={reduceMotion ? false : { opacity: 0, x: entryX, y: entryY, scale: 0.84, filter: "blur(12px)" }}
+        animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" } : {}}
         transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="group relative overflow-hidden rounded-2xl border border-white/[0.08]
-                   bg-[linear-gradient(160deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.02)_100%)]
-                   p-6 shadow-[0_16px_48px_rgba(0,0,0,0.35)] cursor-default h-full"
+        className="group relative overflow-hidden rounded-2xl border border-[#e0dfdc]
+                   bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] cursor-default h-full
+                   hover:shadow-[0_8px_32px_rgba(10,102,194,0.10)] transition-shadow duration-300"
       >
-        {/* ── active top-edge glow line ── */}
+        {/* Active top-edge glow line */}
         <motion.div
           className="absolute inset-x-0 top-0 h-px pointer-events-none"
           animate={{
             background: isActive
-              ? "linear-gradient(90deg,transparent,rgba(10,102,194,0.9),transparent)"
-              : "linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent)",
-            opacity: isActive ? 1 : 0.6,
+              ? "linear-gradient(90deg,transparent,rgba(10,102,194,0.7),transparent)"
+              : "linear-gradient(90deg,transparent,rgba(224,223,220,0.8),transparent)",
+            opacity: isActive ? 1 : 0.8,
           }}
           transition={{ duration: 0.45 }}
         />
 
-        {/* ── corner orb that grows when active ── */}
+        {/* Corner orb when active */}
         <motion.div
-          className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#0a66c2]/12 blur-3xl pointer-events-none"
+          className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#0a66c2]/8 blur-3xl pointer-events-none"
           animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1.3 : 0.7 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        {/* ── specular / mouse-follow highlight ── */}
+        {/* Mouse-follow specular */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100
-                     transition-opacity duration-300"
+          className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(380px circle at ${glow.x}% ${glow.y}%,
-              rgba(10,102,194,0.11), transparent 65%)`,
+            background: `radial-gradient(380px circle at ${glow.x}% ${glow.y}%, rgba(10,102,194,0.06), transparent 65%)`,
           }}
         />
 
-        {/* ── one-shot shimmer sweep on scroll entry ── */}
+        {/* Shimmer sweep on scroll entry */}
         <AnimatePresence>
           {isInView && !swept && (
             <motion.div
               key="sweep"
               className="pointer-events-none absolute inset-y-0 w-28 z-10
-                         bg-gradient-to-r from-transparent via-white/[0.09] to-transparent
-                         skew-x-[18deg]"
+                         bg-gradient-to-r from-transparent via-[#0a66c2]/[0.04] to-transparent skew-x-[18deg]"
               initial={{ x: "-140%" }}
               animate={{ x: "220%" }}
               exit={{}}
@@ -170,10 +144,10 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
           )}
         </AnimatePresence>
 
-        {/* ── icon box ── */}
+        {/* Icon box */}
         <motion.div
           className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl
-                     border border-[#0a66c2]/25 bg-[#0a66c2]/10 shrink-0"
+                     border border-[#0a66c2]/20 bg-[#eef3f8] shrink-0"
           animate={
             isActive && !reduceMotion
               ? { scale: [1, 1.18, 0.95, 1.05, 1], rotate: [0, -10, 8, -4, 0] }
@@ -184,22 +158,18 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
           {feature.icon}
         </motion.div>
 
-        {/* ── text ── */}
-        <h3 className="text-base font-bold text-white mb-2 leading-snug
-                       group-hover:text-[#e8f8ca] transition-colors duration-300">
+        <h3 className="text-base font-bold text-[#191919] mb-2 leading-snug
+                       group-hover:text-[#0a66c2] transition-colors duration-300">
           {feature.title}
         </h3>
-        <p className="text-sm text-[#7a8390] leading-relaxed">
+        <p className="text-sm text-[#595959] leading-relaxed">
           {feature.description}
         </p>
 
-        {/* ── bottom accent bar (expands when active) ── */}
+        {/* Bottom accent bar */}
         <motion.div
           className="mt-5 h-px rounded-full bg-gradient-to-r from-[#0a66c2] to-[#5aa6f6]"
-          animate={{
-            scaleX: isActive ? 1 : 0.25,
-            opacity: isActive ? 1 : 0.2,
-          }}
+          animate={{ scaleX: isActive ? 1 : 0.25, opacity: isActive ? 1 : 0.2 }}
           style={{ transformOrigin: "left" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         />
@@ -208,7 +178,6 @@ function FeatureCard({ feature, index, isActive, onActivate, reduceMotion }: Car
   );
 }
 
-/* ── section ── */
 export function Features() {
   const reduceMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -222,26 +191,23 @@ export function Features() {
   }, [reduceMotion]);
 
   return (
-    <section id="features" className="relative overflow-hidden py-24 px-4 bg-background">
-      {/* Ambient radial backdrop */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(10,102,194,0.08)_0%,transparent_50%)]" />
+    <section id="features" className="relative overflow-hidden py-24 px-4 bg-[#f3f2ee]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(10,102,194,0.05)_0%,transparent_50%)]" />
 
-      {/* Floating orbs */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#0a66c2]/8 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#0a66c2]/6 blur-3xl"
         animate={{ y: [0, -16, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary/8 blur-3xl"
+        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#0a66c2]/5 blur-3xl"
         animate={{ y: [0, 18, 0], scale: [1, 1.06, 1] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Heading */}
         <motion.div
           className="text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 22 }}
@@ -254,18 +220,15 @@ export function Features() {
             animate={{ opacity: [0.4, 1, 0.4], scaleX: [0.85, 1.1, 0.85] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0a66c2] mb-4">
-            Features
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0a66c2] mb-4">Features</p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-[#191919]">
             Everything you need to scale
           </h2>
-          <p className="text-lg text-[#7a8390]">
+          <p className="text-lg text-[#595959]">
             We built the exact tools we wanted for our own LinkedIn growth. No fluff, just pure utility.
           </p>
         </motion.div>
 
-        {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {FEATURES.map((f, i) => (
             <FeatureCard

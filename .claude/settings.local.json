@@ -8,7 +8,9 @@
       "Bash(pnpm --filter @workspace/linkedinflow run build)",
       "Bash(pnpm -w run build:vercel)",
       "Bash(npx vite *)",
-      "Bash(xargs sed *)"
+      "Bash(xargs sed *)",
+      "Bash(cat tailwind.config.ts)",
+      "Bash(cat tailwind.config.js)"
     ]
   }
 }

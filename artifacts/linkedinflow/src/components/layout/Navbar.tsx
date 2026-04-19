@@ -23,7 +23,7 @@ export function Navbar() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#080b0e]/85 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_1px_40px_rgba(0,0,0,0.4)]"
+          ? "bg-white/92 backdrop-blur-xl border-b border-[#e0dfdc] shadow-[0_1px_20px_rgba(0,0,0,0.08)]"
           : "bg-transparent border-b border-transparent"
       }`}
       initial={{ y: -24, opacity: 0 }}
@@ -34,13 +34,13 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg select-none group">
           <motion.div
-            className="animate-pulse-ring bg-[#0a66c2] text-[#ffffff] p-1.5 rounded-lg"
+            className="animate-pulse-ring bg-[#0a66c2] text-white p-1.5 rounded-lg"
             whileHover={{ scale: 1.12, rotate: -6 }}
             transition={{ type: "spring", stiffness: 380, damping: 14 }}
           >
             <Linkedin className="w-5 h-5" />
           </motion.div>
-          <span className="text-white group-hover:text-[#c8f08a] transition-colors duration-200">
+          <span className="text-[#191919] group-hover:text-[#0a66c2] transition-colors duration-200">
             LinkedInFlow
           </span>
         </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative text-[#98a1a8] hover:text-white transition-colors duration-200 py-1 group"
+              className="relative text-[#595959] hover:text-[#191919] transition-colors duration-200 py-1 group"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 h-px w-0 bg-[#0a66c2] group-hover:w-full transition-all duration-300 ease-out rounded-full" />
@@ -64,15 +64,15 @@ export function Navbar() {
           <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
             <Button
               variant="ghost"
-              className="hidden sm:inline-flex h-9 text-sm text-[#98a1a8] hover:text-white hover:bg-white/[0.06]"
+              className="hidden sm:inline-flex h-9 text-sm text-[#595959] hover:text-[#191919] hover:bg-[#f3f2ee]"
             >
               Sign In
             </Button>
           </a>
           <a href="https://linkedinflowfe.vercel.app" target="_blank" rel="noopener noreferrer">
             <Button
-              className="h-9 px-5 text-sm bg-[#0a66c2] text-[#ffffff] hover:bg-[#1477d4] border-0
-                         shadow-[0_0_18px_rgba(10,102,194,0.30)] hover:shadow-[0_0_28px_rgba(10,102,194,0.5)]
+              className="h-9 px-5 text-sm bg-[#0a66c2] text-white hover:bg-[#004182] border-0
+                         shadow-[0_0_18px_rgba(10,102,194,0.20)] hover:shadow-[0_0_28px_rgba(10,102,194,0.35)]
                          transition-all duration-200 font-semibold"
             >
               Start Free Trial
